@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-const dbDirectory = "./db";
+const dbDirectory = path.resolve(__dirname, "./db");
 const db = {};
 
 //importing images
