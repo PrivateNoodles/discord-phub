@@ -1,0 +1,32 @@
+{
+  "name": "discord-phub",
+  "version": "1.0.0",
+  "description": "More than 30 000 images and videos (gif, jpg, png, mp4) of nsfw content with categories",
+  "main": "discord-phub.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoannchb-pro/discord-phub.git"
+  },
+  "keywords": [
+    "discord",
+    "phub",
+    "pornhub",
+    "scrap",
+    "cdn",
+    "nsfw",
+    "categories",
+    "porn",
+    "video",
+    "image",
+    "gif"
+  ],
+  "author": "yoannchb-pro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoannchb-pro/discord-phub/issues"
+  },
+  "homepage": "https://github.com/yoannchb-pro/discord-phub#readme"
+}
