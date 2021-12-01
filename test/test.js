@@ -21,4 +21,8 @@ for(let i=0; i<5; i++){
     console.log("Random: ", notunique.getRandom());
 }
 
-console.log(unique.categories, unique.totalElements);
+for(let category of unique.categories){
+    console.log(`- ${category}`);
+}
+
+console.log(unique.totalElements, unique.categories.length);

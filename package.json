@@ -1,60 +1,36 @@
 {
-  "_from": "discord-phub",
-  "_id": "discord-phub@1.0.0",
-  "_inBundle": false,
-  "_integrity": "sha512-dw9XoTQt2sEt5OQVw5kj64KeiXcy3K4mkKR/fMQIfrVYFJyIv1uFgdXcO4Amx2NJ1i1AKRhZbbLpXPOGMZyfug==",
-  "_location": "/discord-phub",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "discord-phub",
-    "name": "discord-phub",
-    "escapedName": "discord-phub",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/discord-phub/-/discord-phub-1.0.0.tgz",
-  "_shasum": "92447f2443725ad5b0d88285ad74a3a7da9a7441",
-  "_spec": "discord-phub",
-  "_where": "C:\\Users\\ASUS\\Documents\\Perso\\AnimeDatabase",
-  "author": {
-    "name": "yoannchb-pro"
-  },
-  "bugs": {
-    "url": "https://github.com/yoannchb-pro/discord-phub/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "More than 30 000 images and videos (gif, jpg, png, mp4) of nsfw content with categories",
-  "homepage": "https://github.com/yoannchb-pro/discord-phub#readme",
-  "keywords": [
-    "discord",
-    "phub",
-    "pornhub",
-    "scrap",
-    "cdn",
-    "nsfw",
-    "categories",
-    "porn",
-    "video",
-    "image",
-    "gif"
-  ],
-  "license": "MIT",
-  "main": "discord-phub.js",
   "name": "discord-phub",
+  "version": "1.0.1",
+  "description": "The biggest nsfw DB with more than 100 000 images and videos (gif, jpg, png, mp4) of nsfw content with 70+ categories",
+  "main": "discord-phub.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yoannchb-pro/discord-phub.git"
   },
-  "scripts": {
-    "test": "node test.js"
+  "keywords": [
+    "hentai",
+    "nsfw",
+    "pornhub",
+    "porn",
+    "cdn",
+    "discord",
+    "hub",
+    "random",
+    "free",
+    "image",
+    "video",
+    "gif"
+  ],
+  "author": "yoannchb-pro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoannchb-pro/discord-phub/issues"
   },
-  "version": "1.0.0"
+  "homepage": "https://github.com/yoannchb-pro/discord-phub#readme"
 }

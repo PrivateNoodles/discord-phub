@@ -44,7 +44,10 @@ class RandomPHUB{
         return obj[~~(Math.random() * obj.length)];
     }
 
-    getRandomInCategory(category = "all"){
+    getRandomInCategory(category = false){
+        if(!category) category = this.getRandomCategory();
+        if(!this.categories.includes(category)) throw "Unknow category !";
+        
         const nsfw = this.db[category];
 
         let result = new NSFWElement(this._randomize(nsfw), category);
@@ -66,10 +69,13 @@ class RandomPHUB{
     }
 
     getRandom(){
+        return this.getRandomInCategory(this.getRandomCategory());
+    }
+
+    getRandomCategory(){
         const categories = JSON.parse(JSON.stringify(this.categories));
         categories.splice(this.categories.indexOf('all'), 1);
-
-        return this.getRandomInCategory(this._randomize(categories));
+        return this._randomize(categories);
     }
 }
 

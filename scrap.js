@@ -2,7 +2,7 @@
 
 (async() => {
     const config = {
-        name: "3d-porn",
+        name: "lgbt-transgender",
         extension: ["gif", "mp4", "mkv", "png", "jpg", "jpeg"],
         max: 1500
     }
