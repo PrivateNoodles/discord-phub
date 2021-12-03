@@ -41,6 +41,7 @@ class RandomPHUB{
     }
 
     _randomize(obj){
+        console.log("test", ~~(Math.random() * obj.length), obj.length);
         return obj[~~(Math.random() * obj.length)];
     }
 

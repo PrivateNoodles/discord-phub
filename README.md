@@ -1,10 +1,9 @@
-# Discord-phub v1.0.1
+# Discord-phub v1.0.4
 
-The biggest nsfw DB with more than 100 000 images and videos (gif, jpg, png, mp4) of nsfw content with 70+ categories
+Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories
 
 ## Update
-- Lot of new categories
-- Added lgbt prefix for lbgt categories
+- Less medias and catagories for better experience and no more double media
 
 ## Intallation ?
 ```js
