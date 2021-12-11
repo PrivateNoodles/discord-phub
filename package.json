@@ -1,6 +1,6 @@
 {
   "name": "discord-phub",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories",
   "main": "discord-phub.js",
   "directories": {
@@ -32,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/yoannchb-pro/discord-phub/issues"
   },
-  "homepage": "https://github.com/yoannchb-pro/discord-phub#readme"
+  "homepage": "https://github.com/yoannchb-pro/discord-phub#readme",
+  "dependencies": {
+    "link-check": "^5.0.1",
+    "url-status-code": "^2.0.0"
+  }
 }

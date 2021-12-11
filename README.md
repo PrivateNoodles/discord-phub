@@ -1,9 +1,10 @@
-# Discord-phub v1.0.4
+# Discord-phub v1.0.5
 
 Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories
 
 ## Update
-- Less medias and catagories for better experience and no more double media
+- No more infinite loop
+- All url have been check
 
 ## Intallation ?
 ```js
