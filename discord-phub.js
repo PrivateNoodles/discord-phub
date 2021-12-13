@@ -103,12 +103,6 @@ class RandomPHUB{
             if(this.db[category].length == this.picked[category].length) this.picked[category] = [];
         }
 
-        if(result.type == "gif") {
-            const frameData = gifFrames({ url: 'image.gif', frames: 0 }).then(function (frameData) {
-                console.log(frameData[0].getImage().pipe());
-              });
-        }
-
         return result;
     }
 
