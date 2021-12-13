@@ -1,10 +1,10 @@
-# Discord-phub v1.0.5
+# Discord-phub v1.0.6
 
 Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories
 
 ## Update
-- No more infinite loop
-- All url have been check
+- No more problem for embed
+- You can know get a media by is type (see the documentation below)
 
 ## Intallation ?
 ```js
@@ -21,11 +21,17 @@ const nsfw = new RandomPHUB(unique = true);
 console.log(nsfw.db); //display all the database
 console.log(nsfw.db.all); //display all the links of the databases
 console.log(nsfw.categories); //display all the categories
+console.log(nsfw.type); //display all the type
 console.log(nsfw.totalElements); //display total elements in database
+console.log(nsfw.typesByCategorie) //display all available type by categories
 
-const pussy = nsfw.getRandomInCategory('pussy'); //will return a link to a pussy media
-const rnd = nsfw.getRandom(); //will return a link to any media type of any catagory
+const verify = nsfw.verifyTypeInCategory("gif", "pussy"); //verify if a type is available in a categorie
+const pussy = nsfw.getRandomInCategory('pussy', "gif"); //will return a link to a pussy gif
+const pussy2 = nsfw.getRandomInCategory('pussy'); //will return a link to a pussy media 
+const rnd = nsfw.getRandom("gif"); //will return a link to a random media of any categorie with gif type
+const rnd2 = nsfw.getRandom(); //will return a link to a random media of any categorie with any type
 const cat = nsfw.getRandomCategory(); //will return a random category
+const type = nsfw.getRandomType(); //will return a random category
 
 console.log(rnd.type); //show the type of file
 console.log(rnd.category); //show the category of the media

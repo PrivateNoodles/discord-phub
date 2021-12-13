@@ -10,20 +10,26 @@ fs.readdirSync(dbDirectory).forEach(file => {
     db[fileName] = require(dbDirectory + "/" + file);
 });
 
+function findLinkType(url){
+    return url ? url.replace(/.+?\.([^.]+?)$/gi, "$1") : url;
+}
+
 class NSFWElement{
     constructor(url, category){
         this.url = url;
         this.category = category;
-        this.type = url.replace(/.+?\.([^.]+?)$/gi, "$1");
+        this.type = findLinkType(url);
     }
 }
 
 class RandomPHUB{
     constructor(unique = false){
-        this.unique = unique;
+        this.unique = false;
         this.picked = {};
 
         this.db = db;
+        this.type = ["gif", "mp4", "png", "jpg", "jpeg"];
+        this.typesByCategorie = {};
         this.categories = Object.keys(db);
         this.totalElements = this.categories.reduce((previous, current) => {
             return previous + db[current].length;
@@ -38,18 +44,49 @@ class RandomPHUB{
         this.db.all = this.categories.reduce((previous, current) => {
             return previous.concat(db[current]);
         }, []);
+
+        //Types by categories
+        for(let c of this.categories){
+            for(let t of this.type){
+                const test = this.getRandomInCategory(c, t);
+                if(test.url) {
+                    if(this.typesByCategorie[c]) this.typesByCategorie[c].push(t);
+                    else this.typesByCategorie[c] = [t];
+                }
+            }
+        }
+        
+        this.unique = unique;
+    }
+
+    verifyTypeInCategory(type, category){
+        [category, type] = this._checkCategoryType(category, type);
+        return this.typesByCategorie[category].includes(type);
+    }
+
+    _checkCategoryType(category, type){
+        if(!category) category = this.getRandomCategory();
+        if(!this.categories.includes(category)) throw "Unknow category !";
+
+        if(!type) {
+            type = this.getRandomType();
+            while(!this.verifyTypeInCategory(type, category)) type = this.getRandomType();
+        }
+        if(!this.type.includes(type)) throw "Unknow type !";
+
+        return [category, type]
     }
 
     _randomize(obj){
-        console.log("test", ~~(Math.random() * obj.length), obj.length);
         return obj[~~(Math.random() * obj.length)];
     }
 
-    getRandomInCategory(category = false){
-        if(!category) category = this.getRandomCategory();
-        if(!this.categories.includes(category)) throw "Unknow category !";
+    getRandomInCategory(category = false, type = false){
+        [category, type] = this._checkCategoryType(category, type);
         
-        const nsfw = this.db[category];
+        let nsfw = this.db[category];
+
+        if(type) nsfw = nsfw.filter(url => findLinkType(url) == type);
 
         let result = new NSFWElement(this._randomize(nsfw), category);
 
@@ -66,11 +103,21 @@ class RandomPHUB{
             if(this.db[category].length == this.picked[category].length) this.picked[category] = [];
         }
 
+        if(result.type == "gif") {
+            const frameData = gifFrames({ url: 'image.gif', frames: 0 }).then(function (frameData) {
+                console.log(frameData[0].getImage().pipe());
+              });
+        }
+
         return result;
     }
 
-    getRandom(){
-        return this.getRandomInCategory(this.getRandomCategory());
+    getRandomType(){
+        return this._randomize(this.type);
+    }
+
+    getRandom(type = false){
+        return this.getRandomInCategory(this.getRandomCategory(), type);
     }
 
     getRandomCategory(){
