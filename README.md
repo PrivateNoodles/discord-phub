@@ -3,6 +3,8 @@
 Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories
 
 ## Update
+
+- You can use it in the browser
 - No more problem for embed
 - You can know get a media by is type (see the documentation below)
 
@@ -11,9 +13,15 @@ Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw cont
 npm i discord-phub
 ```
 
+## In the browser ?
+
+```html
+<script type="text/javascript" src="./discord-phub.browser.js"></script>
+```
+
 ## How to use ?
 ```js
-const { RandomPHUB } = require('discord-phub');
+const { RandomPHUB } = require('discord-phub'); //if you are on nodejs
 
 //If you want to generate unique media each time else set it to false (by default it's false)
 const nsfw = new RandomPHUB(unique = true);
