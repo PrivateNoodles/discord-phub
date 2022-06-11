@@ -1,12 +1,11 @@
-# Discord-phub v1.0.6
+# Discord-phub v1.0.7
 
 Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories
 
 ## Update
 
-- You can use it in the browser
-- No more problem for embed
-- You can know get a media by is type (see the documentation below)
+- Fixed over 500 broken link
+- Fixed some bugs and infinites loop
 
 ## Intallation ?
 ```js
@@ -39,7 +38,7 @@ const pussy2 = nsfw.getRandomInCategory('pussy'); //will return a link to a puss
 const rnd = nsfw.getRandom("gif"); //will return a link to a random media of any categorie with gif type
 const rnd2 = nsfw.getRandom(); //will return a link to a random media of any categorie with any type
 const cat = nsfw.getRandomCategory(); //will return a random category
-const type = nsfw.getRandomType(); //will return a random category
+const type = nsfw.getRandomType(); //will return a random type
 
 console.log(rnd.type); //show the type of file
 console.log(rnd.category); //show the category of the media

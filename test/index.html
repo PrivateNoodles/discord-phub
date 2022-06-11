@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../discord-phub.browser.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+//If you want to generate unique media each time else set it to false (by default it's false)
+const nsfw = new RandomPHUB(unique = true);
+
+console.log(nsfw.db); //display all the database
+console.log(nsfw.db.all); //display all the links of the databases
+console.log(nsfw.categories); //display all the categories
+console.log(nsfw.type); //display all the type
+console.log(nsfw.totalElements); //display total elements in database
+console.log(nsfw.typesByCategorie) //display all available type by categories
+
+const verify = nsfw.verifyTypeInCategory("gif", "pussy"); //verify if a type is available in a categorie
+const pussy = nsfw.getRandomInCategory('pussy', "gif"); //will return a link to a pussy gif
+const pussy2 = nsfw.getRandomInCategory('pussy'); //will return a link to a pussy media 
+const rnd = nsfw.getRandom("gif"); //will return a link to a random media of any categorie with gif type
+const rnd2 = nsfw.getRandom(); //will return a link to a random media of any categorie with any type
+const cat = nsfw.getRandomCategory(); //will return a random category
+const type = nsfw.getRandomType(); //will return a random type
+
+console.log(rnd.type); //show the type of file
+console.log(rnd.category); //show the category of the media
+console.log(rnd.url); //show the link of the media
+</script>
+</html>

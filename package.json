@@ -1,6 +1,6 @@
 {
   "name": "discord-phub",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Nsfw DB with more than 5 000 images and videos (gif, jpg, png, mp4) of nsfw content with 65+ categories",
   "main": "discord-phub.js",
   "directories": {

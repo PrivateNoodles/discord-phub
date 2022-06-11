@@ -61,16 +61,22 @@ class RandomPHUB{
 
     verifyTypeInCategory(type, category){
         [category, type] = this._checkCategoryType(category, type);
-        return this.typesByCategorie[category].includes(type);
+        return this.typesByCategorie[category]?.includes(type) ?? false;
     }
 
     _checkCategoryType(category, type){
         if(!category) category = this.getRandomCategory();
         if(!this.categories.includes(category)) throw "Unknow category !";
 
+        let count = 0;
+        let limit = 500;
+
         if(!type) {
             type = this.getRandomType();
-            while(!this.verifyTypeInCategory(type, category)) type = this.getRandomType();
+            while(!this.verifyTypeInCategory(type, category) && count < limit) {
+                type = this.getRandomType();
+                count++;
+            }
         }
         if(!this.type.includes(type)) throw "Unknow type !";
 
